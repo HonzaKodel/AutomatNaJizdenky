@@ -23,4 +23,9 @@ public class Jizdenka {
     public void setTrvani(int trvani) {
         this.trvani = trvani;
     }
+
+    @Override
+    public String toString() {
+        return super.toString();
+    }
 }

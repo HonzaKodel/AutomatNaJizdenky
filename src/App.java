@@ -1,8 +1,6 @@
 import java.util.Scanner;
 
-public class Main {
-
-
+public class App {
     public static void main(String [] args) throws IllegalAccessException {
         Scanner SCANNER = new Scanner(System.in);
         Computer computer = new Computer();
@@ -17,9 +15,15 @@ public class Main {
                     break;
                 case TICKET_GET:
                     Jizdenka selectedJizdenka = computer.getSelectedJizdenka();
-                    System.out.println("Máš vybranou jízdenku: " + selectedJizdenka);
-                    System.out.println("Požadovaná cena za jízdenku: ");
+                    System.out.println("Máš vybranou jízdenku: " + selectedJizdenka.getTrvani() + selectedJizdenka.getHodnota());
+                    System.out.println("Požadovaná cena za jízdenku: " + selectedJizdenka.getHodnota() + " Kč");
                     // TODO: ...
+
+                case INSERT_COINS:
+                    computer.displayMince();
+                    System.out.println("Lze použít mince s hodnotou 1, 2, 5, 10, 20 a 50 Korun!");
+
+
 
                 default:
                     scannedValue = "end";
@@ -29,6 +33,4 @@ public class Main {
 
         System.out.println("Ukončení jízdenko-matu");
     }
-
-
 }
